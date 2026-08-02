@@ -63,3 +63,7 @@ Write the plan to `agile-logs/planning/sprint-<n>-plan-<YYYY-MM-DD>.md`: sprint 
 - **STEP 2** — 상품 테이블 스키마 (0.5d) · 등록 API POST /products (1d) · 이미지 업로드 (1d) · 등록 화면 UI (1–2d) · 등록 E2E 테스트 (0.5d). 각 Task는 제목 규칙 + 6절 본문으로 발급.
 - **STEP 3** — C: 스키마·API · B: 이미지 업로드·E2E · A: 등록 화면 UI.
 - **Output** — Sprint Backlog = SOMA-1·2·3 + tasks; Sprint Goal = "물건을 올리고 찾을 수 있다".
+
+## Project preset (optional)
+
+If the project provides a filled **`agile-flow-preset.md`** at its root (fixed Epics, Releases/fixVersions, a reference-link base, and area labels), load it and use those values instead of asking each time — e.g. assign to the preset's Epics, tag its Releases, and build 참조 links from its link base. See `presets/PRESET.example.md` for the shape. Without a preset, ask for Epic/Release when they are needed.

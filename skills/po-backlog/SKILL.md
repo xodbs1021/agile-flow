@@ -122,3 +122,7 @@ After any change, append to `agile-logs/backlog/backlog-<YYYY-MM-DD>.md`: timest
 > **왜:** 매 PR을 수동 검증하면 회귀가 늦게 발견된다.
 > **완료 조건:** [ ] PR 열면 GitHub Actions가 테스트+빌드 실행, 실패 시 머지 차단.
 > MoSCoW **Should** · Epic 개발환경 · fixVersion M1 → Jira `Task` (유저스토리 문구 없음).
+
+## Project preset (optional)
+
+If the project provides a filled **`agile-flow-preset.md`** at its root (fixed Epics, Releases/fixVersions, a reference-link base, and area labels), load it and use those values instead of asking each time — e.g. assign to the preset's Epics, tag its Releases, and build 참조 links from its link base. See `presets/PRESET.example.md` for the shape. Without a preset, ask for Epic/Release when they are needed.
