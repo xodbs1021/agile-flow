@@ -96,3 +96,23 @@ agile-flow/
 ## License
 
 MIT
+
+## Keeping `jira-connect` in sync with ECC
+
+`jira-connect` was hand-synthesized from ECC's `jira-integration` skill — **there is no automatic linkage**. When ECC updates that skill, agile-flow does not change on its own. This repo ships a drift detector:
+
+```bash
+scripts/check-ecc-sync.sh          # ✅ in sync / ⚠️ ECC changed / ℹ️ no baseline
+scripts/check-ecc-sync.sh --save   # accept the current ECC version as the new baseline
+```
+
+The baseline (`scripts/.ecc-jira-integration.sha` + `.baseline.md`) is committed, so the check is meaningful across machines that have the ECC plugin installed.
+
+**Automatic reminder** — `.claude/settings.json` registers a `SessionStart` hook that runs the check whenever you open Claude Code in this project. On drift you'll see a one-line notice at session start; then say *"ECC jira-integration 바뀐 거 jira-connect에 반영해줘"* to re-sync, and run `--save` to accept the new baseline.
+
+**Periodic (session-independent) alternative** — add a cron entry on macOS/Linux:
+
+```cron
+# every Monday 09:00, print drift to a log you check
+0 9 * * 1 /Users/kty/agile-flow/scripts/check-ecc-sync.sh >> /Users/kty/agile-flow/agile-logs/ecc-sync.log 2>&1
+```
