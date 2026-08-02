@@ -1,0 +1,21 @@
+{
+  "name": "agile-flow",
+  "version": "1.1.0",
+  "description": "Run a full Scrum cycle from Claude Code — groom the product backlog, plan sprints, run daily standups, review increments, and hold retros — with every meeting logged to markdown and reflected in Jira through the Atlassian MCP. Includes a shared jira-connect skill for connection, field tagging, and troubleshooting.",
+  "author": {
+    "name": "김상규 (Sanggyu Kim)",
+    "email": ""
+  },
+  "license": "MIT",
+  "keywords": [
+    "agile",
+    "scrum",
+    "jira",
+    "sprint",
+    "backlog",
+    "standup",
+    "retrospective",
+    "atlassian",
+    "mcp"
+  ]
+}

@@ -1,0 +1,6 @@
+# agile-flow operational data — generated meeting logs, not part of the plugin
+agile-logs/
+
+# OS / editor cruft
+.DS_Store
+*.swp
