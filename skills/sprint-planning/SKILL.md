@@ -1,7 +1,7 @@
 ---
 name: sprint-planning
 description: This skill should be used when the user wants to run a Sprint Planning meeting — selecting stories, writing or checking acceptance criteria, breaking stories into tasks, and setting a sprint goal. Triggers on Korean phrases like "스프린트 플래닝", "플래닝 하자", "이번 스프린트 계획 세우자", "태스크로 쪼개줘", "인수 기준 만들어줘", and English phrases like "sprint planning", "plan the sprint", "break this story into tasks", "write acceptance criteria". Creates Jira Task issues linked to stories and assigns the selected work to the sprint via the Atlassian MCP.
-version: 2.0.0
+version: 2.1.0
 ---
 
 # sprint-planning — Sprint Planning meeting
@@ -31,6 +31,7 @@ Tasks are technical work — do **not** force a user-story sentence onto them; t
 
 - **Title** — `[area] result-oriented phrase`, judgeable as done from the title alone (e.g. `[상품] 등록 API POST /products — 필수항목 검증`).
 - **Body** — the fixed sections: **왜 / 무엇(포함·제외) / 완료 조건(이진, 검증 절차 포함) / 참조(정본 링크) / 의존 / 용어(*각주)**. Keep tasks shorter than stories but do not drop the section structure.
+- **Ticket keys are always hyperlinks** — Jira does not auto-link a bare `KEY-123` in API-created bodies. Wherever a task mentions another issue (본문·참조·의존), write `[KEY-123](https://<site>.atlassian.net/browse/KEY-123)`; use the preset's ticket-link base when present.
 
 ### STEP 3 — Assign owners
 

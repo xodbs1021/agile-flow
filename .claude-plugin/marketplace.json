@@ -5,14 +5,14 @@
   },
   "metadata": {
     "description": "Agile/Scrum operations plugin for Claude Code, built in the AISW Maestro lecture 'Claude Code로 Agile 프로젝트 운영 스킬 만들고 자동화하기'.",
-    "version": "1.1.0"
+    "version": "1.1.1"
   },
   "plugins": [
     {
       "name": "agile-flow",
       "source": "./",
       "description": "Six skills: five Scrum events (backlog, planning, daily, review, retro) plus a shared jira-connect. Every meeting is logged to agile-logs/ and mirrored to Jira via the Atlassian MCP.",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "keywords": ["agile", "scrum", "jira", "sprint", "standup", "retrospective"],
       "category": "productivity"
     }

@@ -1,7 +1,7 @@
 ---
 name: po-backlog
 description: This skill should be used when the user wants to groom or manage the Product Backlog, or issue backlog items to Jira in a consistent shape — turning requests into stories or technical tasks, classifying with MoSCoW, ordering by priority, and writing each item to a shared ticket standard. Triggers on Korean phrases like "백로그 정리", "백로그에 추가", "이거 스토리로 만들어줘", "티켓 발급해줘", "우선순위 매겨줘", "제품 백로그 보여줘", and English phrases like "groom the backlog", "add to the backlog", "turn this into a user story", "write a ticket", "prioritize the backlog". Creates and re-orders Jira issues, sets Priority, Epic (parent), and fixVersion via the Atlassian MCP.
-version: 2.0.0
+version: 2.1.0
 ---
 
 # po-backlog — Product Backlog management
@@ -57,11 +57,12 @@ For an item being refined into a next-sprint candidate, write the body in this e
 **완료 조건:** 체크박스, 각 항목이 이진(binary) — 검증 명령/절차/화면 포함.
   - [ ] 예: 필수항목 하나라도 비면 등록 거부 (확인: 가격 빈 요청 → 400 + 미등록)
 **참조:** 정본 링크 1~3개 — 반드시 클릭 가능한 URL. 설계 복붙 금지.
-**의존:** 선행 항목/미결이 있으면 키로, 없으면 "없음".
+**의존:** 선행 항목/미결이 있으면 티켓 키를 링크로 — `[KEY-1](https://<site>.atlassian.net/browse/KEY-1)`. 없으면 "없음".
 **용어:** 본문에 *를 붙인 용어의 한 줄 풀이.
 ```
 
 - **완료 조건에 "동작한다" 금지** — "동작"은 사람마다 다르다. 검증 명령·쿼리·화면 절차로 써야 리뷰어와 작성자가 같은 것을 본다. 행동 시나리오면 Given/When/Then도 가능.
+- **티켓 키는 항상 하이퍼링크로** — Jira는 API로 넣은 본문의 `KEY-123` 텍스트를 자동 링크하지 **않는다**. 본문·참조·의존 어디서든 다른 이슈를 언급하면 `[KEY-123](https://<site>.atlassian.net/browse/KEY-123)` 형태로 쓴다(`<site>` = 연결된 Jira 사이트, 프리셋에 ticket-link base가 있으면 그것을 사용). 정본 문서는 클릭되는데 티켓 키만 클릭 안 되는 티켓 금지 — 읽는 사람이 키를 복사해 검색하게 만드는 순간 그 참조는 실패다.
 - **Coarse bottom items** (beyond the 2-week horizon) skip the full template: just title + MoSCoW grade + a one-line *왜*. Expand to the full template only when the item nears the top.
 
 ### Glossary footnotes (required when cross-discipline)
